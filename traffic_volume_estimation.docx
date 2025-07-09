@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\begin{document}
+
+\title{TrafficTelligence: Advanced Traffic Volume Estimation with Machine Learning}
+\author{Your Name}
+\date{\today}
+\maketitle
+
+\section{Project Overview}
+TrafficTelligence is a web-based application that predicts traffic volume using machine learning based on weather conditions, time, and holiday status. The system uses a Random Forest Regressor model trained on historical traffic data to provide real-time predictions.
+
+\section{Data Processing}
+\begin{itemize}
+    \item \textbf{Dataset}: traffic_volume.csv
+    \item \textbf{Features}: Temperature, Rain, Snow, Weather, Hour, Day of Week, Month, Holiday Status
+    \item \textbf{Target}: Traffic Volume
+    \item \textbf{Preprocessing}:
+    \begin{itemize}
+        \item Handling missing values using mean/mode imputation
+        \item Encoding categorical variables
+        \item Feature scaling using StandardScaler
+        \item Temporal feature extraction (hour, day of week, month)
+    \end{itemize}
+\end{itemize}
+
+\section{Model Development}
+\begin{itemize}
+    \item \textbf{Model}: Random Forest Regressor
+    \item \textbf{Training}: 80-20 train-test split
+    \item \textbf{Evaluation Metrics}:
+    \begin{itemize}
+        \item R² Score
+        \item Mean Absolute Error (MAE)
+        \item Root Mean Squared Error (RMSE)
+    \end{itemize}
+    \item \textbf{Model Storage}: Saved as model.pkl, preprocessor.pkl, feature_names.pkl
+\end{itemize}
+
+\section{Web Application}
+\begin{itemize}
+    \item \textbf{Framework}: Flask
+    \item \textbf{Frontend}: HTML templates with CSS styling
+    \item \textbf{Features}:
+    \begin{itemize}
+        \item User input form for weather and time conditions
+        \item Real-time prediction
+        \item Conditional output pages (high/normal traffic)
+    \end{itemize}
+\end{itemize}
+
+\section{Use Cases}
+\begin{itemize}
+    \item Dynamic Traffic Management
+    \item Urban Planning
+    \item Commuter Navigation
+\end{itemize}
+
+\section{Deployment}
+The application can be deployed on platforms like Render, Heroku, or IBM Cloud. Local testing is performed at \url{http://127.0.0.1:5000}.
+
+\end{document}
